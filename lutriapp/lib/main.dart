@@ -10,9 +10,7 @@ class LutriApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey
-      ),
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
       home: const HomePage(),
     );
   }
@@ -29,37 +27,40 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Center(
-          child: GridView.count(
-            primary: false,
-            padding: const EdgeInsets.all(20),
-            crossAxisCount: 3,
-            crossAxisSpacing: 5,
-            mainAxisSpacing: 5,
-            children: [
-              Container(
-                width: 100,
-                height: 300,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(30)
+        body: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Center(
+        child: GridView.count(
+        primary: false,
+        padding: const EdgeInsets.all(20),
+        crossAxisCount: 3,
+        crossAxisSpacing: 5,
+        mainAxisSpacing: 5,
+        children: [
+          Container(
+            width: 100,
+            height: 300,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.blue, borderRadius: BorderRadius.circular(30)),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  
+                  child: Image.asset(
+                    'images/tomate_confit.jpeg', 
+                    height: 200,
+                    
+                    fit:BoxFit.fill ),
                 ),
-                child: Column(
-                  children: [
-
-                    Image.asset('imgs/TomateConfit.jpeg'),
-
-                  ],
-                ),
-              ),
-            ],
-            
-            )
-        ),
-      )
-    );
+                
+                const Text("olaaa"),
+                ],
+            ),
+          ),
+        ],
+      )),
+    ));
   }
 }
