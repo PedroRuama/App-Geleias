@@ -1,66 +1,34 @@
+// no terminal
+// flutter pub add easy_splash_screen
+// flutter pub get (para instalar o package no projeto)
+
 import 'package:flutter/material.dart';
+import 'package:lutriapp/SplashPage.dart';
+import 'package:lutriapp/home.dart';
+import 'package:lutriapp/feira.dart';
 
-void main() {
-  runApp(const LutriApp());
+
+void main(){
+  runApp (const MyApp());
+  
 }
-
-class LutriApp extends StatelessWidget {
-  const LutriApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.blueGrey),
-      home: const HomePage(),
+      title: 'LutriApp',
+      theme: ThemeData(
+        primarySwatch: Colors.brown,
+      ),
+      initialRoute: '/',
+      routes: {
+        '/':(context) => const SplashPage(),
+        '/home': (context) => const home(),
+        'home/feira': (context) => const feira(),
+        
+      },
     );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Center(
-        child: GridView.count(
-        primary: false,
-        padding: const EdgeInsets.all(20),
-        crossAxisCount: 3,
-        crossAxisSpacing: 5,
-        mainAxisSpacing: 5,
-        children: [
-          Container(
-            width: 100,
-            height: 300,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Colors.blue, borderRadius: BorderRadius.circular(30)),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  
-                  child: Image.asset(
-                    'images/tomate_confit.jpeg', 
-                    height: 200,
-                    
-                    fit:BoxFit.fill ),
-                ),
-                
-                const Text("olaaa"),
-                ],
-            ),
-          ),
-        ],
-      )),
-    ));
   }
 }
