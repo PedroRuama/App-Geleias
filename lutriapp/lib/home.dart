@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lutriapp/feira.dart';
+import 'package:lutriapp/dadosF.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -11,7 +12,7 @@ class home extends StatefulWidget {
 class _homeState extends State<home> {
   void NewFeira() {
     Navigator.push(context, 
-    MaterialPageRoute(builder: (context) => feira()));
+    MaterialPageRoute(builder: (context) => dadosF()));
 
   }
   int _selectecIndex = 0;
@@ -54,11 +55,12 @@ class _homeState extends State<home> {
                   width: MediaQuery.of(context).size.width * 0.50,
                   height: MediaQuery.of(context).size.height * 0.05,
                   child: ElevatedButton(
-                      onPressed: NewFeira, child: Text("Nova Feira")
+                      onPressed: NewFeira, 
+                      child: const Text("Nova Feira")
                       
                       )
                       
-                      ),
+                ),
             ],
           ),
         ),

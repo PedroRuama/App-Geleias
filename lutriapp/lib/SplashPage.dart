@@ -2,6 +2,7 @@
 // flutter pub add easy_splash_screen
 // flutter pub get (para instalar o package no projeto)
 
+// manualmente no pubspec.yaml: easy_splash_screen: ^1.0.4
 import 'package:flutter/material.dart';
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:lutriapp/home.dart';

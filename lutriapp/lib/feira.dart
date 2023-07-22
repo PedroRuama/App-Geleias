@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:lutriapp/dadosF.dart';
 
 class feira extends StatefulWidget {
-  const feira({super.key});
+  
+  String nome;
+  feira(this.nome);
+
+
+
+
+
 
   @override
   State<feira> createState() => _feiraState();
@@ -27,7 +35,8 @@ class _feiraState extends State<feira> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Feira"),
+        title: Text("${widget.nome}"),
+        
       ),
       body: Padding(
       padding: const EdgeInsets.all(8.0),
