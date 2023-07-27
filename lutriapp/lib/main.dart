@@ -24,6 +24,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'LutriApp',
       theme: ThemeData(
+        
+        
         primarySwatch: Colors.brown,
       ),
       initialRoute: '/',

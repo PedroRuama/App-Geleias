@@ -61,7 +61,12 @@ class _homeState extends State<home> {
                       )
                       
                 ),
+              
             ],
+            
+
+
+
           ),
         ),
       ),
@@ -75,7 +80,10 @@ class _homeState extends State<home> {
         currentIndex: _selectecIndex,
         selectedItemColor: Colors.white,
         onTap: _onItemTapped,
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.deepOrange,
+        
+        
+        
       ),
 
       floatingActionButton: FloatingActionButton(
