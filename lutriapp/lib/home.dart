@@ -80,7 +80,7 @@ class _homeState extends State<home> {
         currentIndex: _selectecIndex,
         selectedItemColor: Colors.white,
         onTap: _onItemTapped,
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.brown,
         
         
         
