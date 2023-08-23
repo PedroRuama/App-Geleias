@@ -53,8 +53,11 @@ class controleDados {
   }
 }
 
+List<String> poteT = ['G', 'P'];
+
 class _feiraState extends State<feira> {
   //script
+  String selecionado = poteT[0];
   final controle = new controleDados();
 
   int iTC = 0;
@@ -63,6 +66,9 @@ class _feiraState extends State<feira> {
   int iMM = 0;
   int iMC = 0;
   int iAX = 0;
+
+  double h = 0.25;
+  double H = 0.30;
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +80,7 @@ class _feiraState extends State<feira> {
         padding: const EdgeInsets.all(0.0),
         child: Center(
             child: Column(
-          
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -86,7 +92,7 @@ class _feiraState extends State<feira> {
                     children: [
                       //con morango
                       Container(
-                        height: MediaQuery.of(context).size.height * 0.25,
+                        height: MediaQuery.of(context).size.height * h,
                         width: MediaQuery.of(context).size.width * 0.30,
                         margin: EdgeInsets.all(3.5),
                         alignment: Alignment.center,
@@ -98,11 +104,44 @@ class _feiraState extends State<feira> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.all(10.0),
-                              child: Image.asset(
-                                  'images/morango.jpeg', // morango img
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.14,
-                                  fit: BoxFit.cover),
+                              child: Row(
+                                children: [
+                                  Image.asset(
+                                      'images/morango.jpeg', // morango img
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.14,
+                                      fit: BoxFit.cover),
+                                  Container(
+                                    child: Column(children: <Widget>[
+                                      // ListTile(
+                                      //   title: const Text("G"),
+                                      //   leading: Radio(
+                                      //     value: poteT[0],
+                                      //     groupValue: selecionado,
+                                      //     onChanged: (value) {
+                                      //       setState(() {
+                                      //         selecionado = value.toString();
+                                      //       });
+                                      //     },
+                                      //   ),
+                                      // ),
+                                      // ListTile(
+                                      //   title: const Text("P"),
+                                      //   leading: Radio(
+                                      //     value: poteT[1],
+                                      //     groupValue: selecionado,
+                                      //     onChanged: (value) {
+                                      //       setState(() {
+                                      //         selecionado = value.toString();
+                                      //       });
+                                      //     },
+                                      //   ),
+                                      // ),
+                                    ]),
+                                  )
+                                ],
+                              ),
                             ),
                             Text(
                               "Morango",
@@ -640,7 +679,6 @@ class _feiraState extends State<feira> {
                           ],
                         ),
                       ),
-
                       //con caponata de berinjela
                       Container(
                         height: MediaQuery.of(context).size.height * 0.25,
@@ -757,63 +795,69 @@ class _feiraState extends State<feira> {
             ),
 
             //btn submit
-            
+
             Positioned(
                 bottom: 0,
                 left: 0,
                 right: 0, //set left right to 0 for 100% width
                 child: Container(
-                    color: Colors.greenAccent,
+                    color: Colors.brown,
                     height: MediaQuery.of(context).size.height * 0.1,
+                    // width: MediaQuery.of(context).size.width * 1,
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Row( 
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,                
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Column(
                             children: [
-                              Text('ola', style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold
-                                ),),
-                            ],
-                          ),            
-
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.20,
-                            height: MediaQuery.of(context).size.height * 0.05,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                setState(() {
-                                  controle.ctrlM(iM);
-                                  controle.ctrlMM(iMM);
-                                  controle.ctrlMC(iMC);
-                                  controle.ctrlAX(iAX);
-                                  controle.ctrlTC(iTC);
-                                  controle.ctrlB(iB);
-                                  iM = 0;
-                                  iMM = 0;
-                                  iMC = 0;
-                                  iAX = 0;
-                                  iTC = 0;
-                                  iB = 0;
-                                });
-                              },
-                              child: const Text("Submit")
-                              )
+                              Text(
+                                'ola',
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
                               ),
-                          
+                            ],
+                          ),
+                          // ListTile(
+
+                          //   title: const Text("G"),
+                          //   leading: Radio(
+                          //     value: poteT[0],
+                          //     groupValue: selecionado,
+                          //     onChanged: (value) {
+                          //       setState(() {
+                          //         selecionado = value.toString();
+                          //       });
+                          //     },
+                          //   ),
+                          // ),
+                          SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.20,
+                              height: MediaQuery.of(context).size.height * 0.05,
+                              child: ElevatedButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      controle.ctrlM(iM);
+                                      controle.ctrlMM(iMM);
+                                      controle.ctrlMC(iMC);
+                                      controle.ctrlAX(iAX);
+                                      controle.ctrlTC(iTC);
+                                      controle.ctrlB(iB);
+                                      iM = 0;
+                                      iMM = 0;
+                                      iMC = 0;
+                                      iAX = 0;
+                                      iTC = 0;
+                                      iB = 0;
+                                    });
+                                  },
+                                  child: const Text("Submit"))),
                         ],
                       ),
-                    ) 
-                  )
-                ),
+                    ))),
           ],
         )),
       ),
     );
   }
 }
-
-
-

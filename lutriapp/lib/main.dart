@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/':(context) => const SplashPage(),
+        '/':(context) => feira(''),
         '/home': (context) => const home(),
         'home/dados': (context) => const dadosF(),
         

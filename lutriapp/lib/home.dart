@@ -65,25 +65,10 @@ class _homeState extends State<home> {
             ],
             
 
-
+            
 
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          
-          BottomNavigationBarItem(icon: Icon(Icons.store_rounded), label: 'New'),
-        ],
-        currentIndex: _selectecIndex,
-        selectedItemColor: Colors.white,
-        onTap: _onItemTapped,
-        backgroundColor: Colors.brown,
-        
-        
-        
       ),
 
       floatingActionButton: FloatingActionButton(
@@ -93,6 +78,37 @@ class _homeState extends State<home> {
         child: const Icon(Icons.storefront, color: Colors.black54,),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        color: Colors.brown,
+        child: IconTheme(
+          data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+                          
+            IconButton(
+              tooltip: 'Home',
+              icon: const Icon(Icons.home, semanticLabel: 'home',),
+              onPressed: () {},
+            ),
+            IconButton(
+              tooltip: 'New',
+              icon: const Icon(Icons.store_rounded),
+              onPressed: () {},
+            ),
+            ],
+          ),
+
+
+
+        ),
+
+        
+
+        
+        
+      ),
       
     );
   }
